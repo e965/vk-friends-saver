@@ -22,17 +22,17 @@
 	<div class="container">
 		<div class="col-xl-12">
 			<header class="text-center"><h3>Сохранение списка друзей пользователя ВК</h3></header>
-			<div class="alert alert-no-vk-token alert-danger" role="alert">Внимание! В связи с новыми правилами использования API ВК, вам необходимо пройти авторизацию. Сделать это можно <a class="alert-link" href="./auth.html">по этой ссылке</a>.</div>
+			<div class="alert alert-no-vk-token alert-danger" role="alert">Внимание! В связи с новыми правилами использования VK API, вам необходимо пройти авторизацию и получить токен, иначе приложение работать не будет. Сделать это можно <a class="alert-link" href="./auth.html">по этой ссылке</a>.</div>
 			<p>Введите цифры, которые идут после <b>/id</b> в адресе. Например, для того, чтобы получить список друзей у vk.com/id1, нужно ввести <b>1</b>. Узнать полный id пользователя, если у него поставлен ник (напр. vk.com/durov) можно <a href="./get-id.html" target="_blank">здесь</a>. Скрытых друзей можно попробовать поискать <a href="https://vk.com/app3256362" target="_blank" rel="nofollow noopener">тут</a>.</p>
 			<form class="form-row" onsubmit="return false;">
 				<div class="form-group">
 					<div class="input-group">
 						<div class="input-group-prepend">
-							<div class="input-group-text">/id</div>
+							<div class="input-group-text">vk.com/id</div>
 						</div>
 						<input type="number" class="id form-control" placeholder="ID">
 						<div class="input-group-append">
-							<button class="btn btn-get btn-secondary" type="button">KA-BOOM!</button>
+							<button class="btn btn-get btn-secondary" type="submit">KA-BOOM!</button>
 						</div>
 						<div>
 							<a href="javascript:void(0)" class="btn btn-dl btn-primary">Скачать файлик</a>
