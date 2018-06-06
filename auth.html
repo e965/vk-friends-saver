@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="ru"><head>
+	<meta charset="utf-8">
+	<title>VK Auth</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		div {
+			display: none;
+			text-align: center;
+		}
+
+		.expires[data-time]:before {
+			content: ' (осталось ' attr(data-time) ' ч.)'
+		}
+	</style>
+</head><body>
+	<div data-auth="no">
+		<p>Нажмите сюда:<p>
+		<button class="btn-auth">Авторизоваться</button>
+	</div>
+	<div data-auth="yes">
+		<p>Вы авторизованы, ключ доступа будет действовать ровно сутки<span class="expires"></span>, после этого необходимо будет авторизоваться повторно.</p>
+		<p><a href="./">вернуться обратно</a></p>
+	</div>
+	<div data-auth="error">
+		<p>Произошла какая-то ошибка при авторизации.<p>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/kamina-js@1.2.7/dist/kamina.min.js" integrity="sha256-O7VS3dDmlzbLeD77bEGhtckWN2plD9qFSTD0W7oMtsM=" crossorigin="anonymous" defer></script>
+	<script src="js/vk-token-check.js" defer></script>
+	<script src="js/vk-auth.js" defer></script>
+</body></html>
