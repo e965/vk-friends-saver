@@ -13,14 +13,14 @@
 	</style>
 </head><body>
 	<div class="no-vk-token"><b>Внимание: для начала необходимо <a href="./auth.html">пройти авторизацию</a>.</b></div>
-	<form>
-	<p>
-		<label>Введите короткую ссылку: </label>
-		<input class="link" type="text" required>
-	</p>
-	<p>
-		<button class="get" type="submit">Узнать</button>
-	</p>
+	<form onsubmit="return false;">
+		<p>
+			<label>Введите короткую ссылку: </label>
+			<input class="link" type="text" required>
+		</p>
+		<p>
+			<button class="get" type="submit">Узнать</button>
+		</p>
 	</form>
 	<p class="id"></p>
 	<script src="https://cdn.jsdelivr.net/npm/fetch-jsonp@1.1.3/build/fetch-jsonp.min.js" crossorigin="anonymous" defer></script>
