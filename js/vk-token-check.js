@@ -2,9 +2,9 @@
 
 let isVKtokenActive = false
 
-if ('vk-token' in localStorage) {
+if (VK_STORAGE_TOKEN_ITEM_NAME in localStorage) {
 	if ((Date.now() / 1000) > Number(localStorage['vk-token-expires-date'])) {
-		localStorage.removeItem('vk-token')
+		localStorage.removeItem(VK_STORAGE_TOKEN_ITEM_NAME)
 	} else {
 		isVKtokenActive = true
 	}

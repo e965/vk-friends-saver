@@ -6,25 +6,33 @@
 	<link rel="shortcut icon" href="https://favicon.yandex.net/favicon/vk.com">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/css/bootstrap.min.css" crossorigin="anonymous">
-	<style>
-		header { margin-top: 10px }
-		form { margin-bottom: 15px }
-		.btn-dl { display: none; margin: 10px 0 }
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=" crossorigin="anonymous">
 
-		.alert-no-vk-token:not([data-show]) { display: none }
+	<style>
+		header { margin-top: 10px; }
+		form { margin-bottom: 15px; }
+		.btn-dl { display: none; margin: 10px 0; }
+
+		.alert-no-vk-token:not([data-show]) { display: none; }
+
+		.table-danger { word-break: break-word;  }
 
 		@media screen and (min-width: 576px) {
-			.btn-dl { margin: 0 0 0 5px }
+			.btn-dl { margin: 0 0 0 5px; }
 		}
 	</style>
 </head><body>
 	<div class="container">
-		<div class="col-xl-12">
+		<div class="col-xl-10">
 			<header class="text-center"><h3>Сохранение списка друзей пользователя ВК</h3></header>
+
 			<div class="alert alert-no-vk-token alert-danger" role="alert">Внимание! В связи с новыми правилами использования VK API, вам необходимо пройти авторизацию и получить токен, иначе приложение работать не будет. Сделать это можно <a class="alert-link" href="./auth.html">по этой ссылке</a>.</div>
+
 			<p>Введите цифры, которые идут после <b>/id</b> в адресе. Например, для того, чтобы получить список друзей у vk.com/id1, нужно ввести <b>1</b>. Узнать полный id пользователя, если у него поставлен ник (напр. vk.com/durov) можно <a href="./get-id.html" target="_blank">здесь</a>. Скрытых друзей можно попробовать поискать <a href="https://vk.com/app3256362" target="_blank" rel="nofollow noopener">тут</a>.</p>
-			<form class="form-row" onsubmit="return false;">
+
+			<p>Если при запросе выдаётся ошибка <q>Error: JSONP request to https://api.vk.com/...</q>, то необходимо отключить блокировщики рекламы и/или скриптов.</p>
+
+			<form class="col-xl-5 form-row" onsubmit="return false;">
 				<div class="form-group">
 					<div class="input-group">
 						<div class="input-group-prepend">
@@ -35,11 +43,12 @@
 							<button class="btn btn-get btn-secondary" type="submit">KA-BOOM!</button>
 						</div>
 						<div>
-							<a href="javascript:void(0)" class="btn btn-dl btn-primary">Скачать файлик</a>
+							<a href="javascript:void(0);" class="btn btn-dl btn-primary">Скачать файлик</a>
 						</div>
 					</div>
 				</div>
 			</form>
+
 			<table class="table table-hover">
 				<thead><tr>
 					<th>ID</th>
@@ -49,8 +58,11 @@
 			</table>
 		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/fetch-jsonp@1.1.3/build/fetch-jsonp.min.js" crossorigin="anonymous" defer></script>
-	<script src="https://cdn.jsdelivr.net/hi-base64/0.2.1/base64.min.js" crossorigin="anonymous" defer></script>
-	<script src="js/vk-token-check.js" defer></script>
-	<script src="js/main.js" defer></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/fetch-jsonp@1.2.1/build/fetch-jsonp.js" integrity="sha256-TGTSuP4J6qyPOPGZ8QApYH2/wEcPGlWPBmZzIuoYosc=" crossorigin="anonymous" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/hi-base64@0.2.1/build/base64.min.js" integrity="sha256-c/Ynb3yzld1MvdxTAq18mMmcrr9P//lqdgmxBhjUkKA=" crossorigin="anonymous" defer></script>
+
+	<script src="./js/config.js" defer></script>
+	<script src="./js/vk-token-check.js" defer></script>
+	<script src="./js/main.js" defer></script>
 </body></html>

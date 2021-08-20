@@ -1,6 +1,5 @@
-let
-	getBtn = document.querySelector('.get'),
-	idField = document.querySelector('.id')
+const getBtn = document.querySelector('.get')
+const idField = document.querySelector('.id')
 
 if (!isVKtokenActive) {
 	document.querySelector('.no-vk-token').dataset.show = ''
@@ -9,11 +8,17 @@ if (!isVKtokenActive) {
 getBtn.addEventListener('click', e => {
 	idField.textContent = ''
 
-	let
-		link = document.querySelector('.link').value,
-		name = link.replace('https:', '').replace('http:', '').replace('//', '').replace('vkontakte.ru/', '').replace('vk.com/', '')
+	const link = document.querySelector('.link').value
+	const name = link.replace('https:', '').replace('http:', '').replace('//', '').replace('vkontakte.ru/', '').replace('vk.com/', '')
 
-	fetchJsonp(`https://api.vk.com/method/utils.resolveScreenName?screen_name=${name}&access_token=${localStorage['vk-token']}&v=5.78`)
+	const ApiMethodEndpoint = new URL('https://api.vk.com/method/utils.resolveScreenName')
+	const ApiMethodParams = new URLSearchParams({
+		screen_name: name,
+		access_token: localStorage[VK_STORAGE_TOKEN_ITEM_NAME],
+		v: VK_API_VERSION
+	})
+
+	fetchJsonp(`${ApiMethodEndpoint.href}?${ApiMethodParams.toString()}`)
 		.then(r => r.ok ? r.json() : {})
 		.then(data => {
 			let res = data.response

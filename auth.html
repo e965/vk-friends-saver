@@ -11,7 +11,7 @@
 		}
 
 		.expires[data-time]:before {
-			content: ' (осталось ' attr(data-time) ' ч.)'
+			content: ' (осталось ' attr(data-time) ' ч.)';
 		}
 	</style>
 </head><body>
@@ -26,7 +26,10 @@
 	<div data-auth="error">
 		<p>Произошла какая-то ошибка при авторизации.<p>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/kamina-js@1.2.7/dist/kamina.min.js" crossorigin="anonymous" defer></script>
-	<script src="js/vk-token-check.js" defer></script>
-	<script src="js/vk-auth.js" defer></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/kamina-js@1.3.2/dist/kamina.min.js" integrity="sha256-dr47GarbRAmyhjmKZJkzGiGF2r/1kJlzFE+75ITwstw=" crossorigin="anonymous" defer></script>
+
+	<script src="./js/config.js" defer></script>
+	<script src="./js/vk-token-check.js" defer></script>
+	<script src="./js/vk-auth.js" defer></script>
 </body></html>

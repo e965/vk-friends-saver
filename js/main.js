@@ -1,10 +1,9 @@
 'use strict'
 
-let
-	btnGet =  document.querySelector('.btn-get'),
-	btnDl =   document.querySelector('.btn-dl')
+const btnGet =  document.querySelector('.btn-get')
+const btnDl =   document.querySelector('.btn-dl')
 
-let table = document.querySelector('table tbody')
+const table = document.querySelector('table tbody')
 
 if (!isVKtokenActive) {
 	document.querySelector('.alert-no-vk-token').dataset.show = ''
@@ -16,7 +15,7 @@ btnGet.addEventListener('click', e => {
 	btnDl.style.display = 'none'
 	btnDl.setAttribute('href', 'javascript:void(0)')
 
-	let userID = document.querySelector('.id').value
+	const userID = document.querySelector('.id').value
 
 	if (!userID) {
 		table.innerHTML = '<tr class="table-warning"><td colspan="2">ID пользователя не указан.</td></tr>'; return
@@ -24,7 +23,15 @@ btnGet.addEventListener('click', e => {
 
 	btnDl.setAttribute('download', 'vkfriends_' + userID + '.txt')
 
-	fetchJsonp(`https://api.vk.com/method/friends.get?user_id=${userID}&access_token=${localStorage['vk-token']}&v=5.78&fields=nick`)
+	const ApiMethodEndpoint = new URL('https://api.vk.com/method/friends.get')
+	const ApiMethodParams = new URLSearchParams({
+		user_id: userID,
+		access_token: localStorage[VK_STORAGE_TOKEN_ITEM_NAME],
+		v: VK_API_VERSION,
+		fields: 'nick'
+	})
+
+	fetchJsonp(`${ApiMethodEndpoint.href}?${ApiMethodParams.toString()}`)
 		.then(response => {
 		response.json().then((data) => {
 			if (data.error) {
