@@ -11,15 +11,11 @@
 	<style>
 		header { margin-top: 10px; }
 		form { margin-bottom: 15px; }
-		.btn-dl { display: none; margin: 10px 0; }
+		.btn-dl { display: none; }
 
 		.alert-no-vk-token:not([data-show]) { display: none; }
 
 		.table-danger { word-break: break-all;  }
-
-		@media screen and (min-width: 576px) {
-			.btn-dl { margin: 0 0 0 5px; }
-		}
 	</style>
 </head><body>
 	<div class="container">
@@ -33,19 +29,13 @@
 			<p>Если при запросе выдаётся ошибка <q>Error: JSONP request to https://api.vk.com/...</q>, то необходимо отключить блокировщики рекламы и/или скриптов.</p>
 
 			<form class="col-xl-5 form-row" onsubmit="return false;">
-				<div class="form-group">
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<div class="input-group-text">vk.com/id</div>
-						</div>
-						<input type="number" class="id form-control" placeholder="ID">
-						<div class="input-group-append">
-							<button class="btn btn-get btn-secondary" type="submit">KA-BOOM!</button>
-						</div>
-						<div>
-							<a href="javascript:void(0);" class="btn btn-dl btn-primary">Скачать файлик</a>
-						</div>
-					</div>
+				<div class="input-group">
+					<span class="input-group-text">vk.com/id</span>
+					<input type="number" class="form-control id" placeholder="ID" min="1">
+					<button class="btn btn-secondary btn-get" type="submit">KA-BOOM!</button>
+				</div>
+				<div class="mt-1">
+					<a href="javascript:void(0);" class="btn btn-primary btn-dl">Скачать файлик</a>
 				</div>
 			</form>
 
