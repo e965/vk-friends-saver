@@ -1,6 +1,6 @@
 window.APP_ID = 'e965-vk-friends-saver'
 
-window.VK_API_VERSION = '5.131'
+window.VK_API_VERSION = '5.199'
 
 window.VK_APP_ID = 4071743
 
