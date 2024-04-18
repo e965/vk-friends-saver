@@ -16,13 +16,20 @@
 	</style>
 </head><body>
 	<div data-auth="no">
-		<p>Нажмите сюда:<p>
-		<button class="btn-auth">Авторизоваться</button>
+		<p>Нажмите сюда: <button class="btn-auth">Авторизоваться</button><p>
+		<p style="margin-top: 25px">После окончания авторизации скопируйте URL, который будет у страницы (https://oauth.vk.com/blank.html#access_token=...), в это поле:</p>
+		<form class="form-auth">
+			<p><input type="url" name="auth_url" placeholder="https://oauth.vk.com/blank.html#access_token=.."></p>
+			<button type="submit">Введено!</button>
+		</form>
+		<p style="margin-top: 25px"><a href="./">вернуться обратно</a></p>
 	</div>
+
 	<div data-auth="yes">
 		<p>Вы авторизованы, ключ доступа будет действовать ровно сутки<span class="expires"></span>, после этого необходимо будет авторизоваться повторно.</p>
 		<p><a href="./">вернуться обратно</a></p>
 	</div>
+
 	<div data-auth="error">
 		<p>Произошла какая-то ошибка при авторизации.<p>
 	</div>
@@ -31,5 +38,5 @@
 
 	<script src="./js/config.js" defer></script>
 	<script src="./js/vk-token-check.js" defer></script>
-	<script src="./js/vk-auth.js" defer></script>
+	<script src="./js/vk-auth.js?1" defer></script>
 </body></html>

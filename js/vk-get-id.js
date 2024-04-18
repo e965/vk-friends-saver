@@ -1,7 +1,7 @@
 const getBtn = document.querySelector('.get')
 const idField = document.querySelector('.id')
 
-if (!isVKtokenActive) {
+if (!isVkTokenActive) {
 	document.querySelector('.no-vk-token').dataset.show = ''
 }
 

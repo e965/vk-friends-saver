@@ -5,7 +5,7 @@ const btnDl =   document.querySelector('.btn-dl')
 
 const table = document.querySelector('table tbody')
 
-if (!isVKtokenActive) {
+if (!isVkTokenActive) {
 	document.querySelector('.alert-no-vk-token').dataset.show = ''
 }
 
