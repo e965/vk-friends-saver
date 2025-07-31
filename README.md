@@ -8,4 +8,4 @@
 * [Bootstrap](https://getbootstrap.com)
 * [hi-base64](https://github.com/emn178/hi-base64)
 * [fetch-jsonp](https://github.com/camsong/fetch-jsonp)
-* [kamina-js](https://github.com/tehcojam/kamina-js)
+* [kamina-js](https://github.com/e965/kamina-js)
